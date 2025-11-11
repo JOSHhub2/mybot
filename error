@@ -1,0 +1,6 @@
+import json
+
+try:
+    parsed = json.loads(data)
+except json.JSONDecodeError as e:
+    print("JSON is invalid:", e)
