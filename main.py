@@ -15,14 +15,14 @@ logging.basicConfig(
 )
 
 # Replace this with your Telegram bot token
-BOT_TOKEN = "8525801385:AAGdNm2DXTBkJa_ng6Eq3pGYeJ5LStJ6fQQ"
+BOT_TOKEN = "8314834676:AAELNYstDs3N717JwjCxZXo8JIIiMkRnbSI"
 
 # Define file paths
 LOGS_FOLDER = "/home/container/Database"
 SESSION_FILE = "session_keys.json"
 
 # Admin ID (replace with your actual Telegram user ID)
-ADMIN_ID = 8066288821
+ADMIN_ID = 8210638636
 
 # Ensure necessary folders exist
 if not os.path.exists(LOGS_FOLDER):
