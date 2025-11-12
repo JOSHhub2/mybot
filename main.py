@@ -28,12 +28,31 @@ ADMIN_ID = 8066288821
 if not os.path.exists(LOGS_FOLDER):
     os.makedirs(LOGS_FOLDER)
 
-# Load session keys
+import json
+import os
+
 def load_session_keys():
-    if os.path.exists(SESSION_FILE):
-        with open(SESSION_FILE, 'r') as file:
-            return json.load(file)
-    return {}
+    path = "session_keys.json"
+    
+    # Kung walang file, gumawa ng bago
+    if not os.path.exists(path):
+        with open(path, "w") as f:
+            json.dump({}, f)
+        return {}
+
+    # Kung may file pero empty o sira, ayusin
+    with open(path, "r") as f:
+        try:
+            data = json.load(f)
+            if not isinstance(data, dict):
+                return {}
+            return data
+        except json.JSONDecodeError:
+            # Gumawa ulit ng valid file kung invalid JSON
+            with open(path, "w") as f2:
+                json.dump({}, f2)
+            return {}
+
 
 # Save session keys
 def save_session_keys(session_keys):
