@@ -6,9 +6,6 @@ import asyncio
 from datetime import datetime, timedelta
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, ContextTypes, CallbackQueryHandler
-from telegram.ext import ApplicationBuilder
-
-application = ApplicationBuilder().token(BOT_TOKEN).build()
 
 
 # Configure logging
